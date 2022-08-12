@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Home Page</title>
+    <script th:src="@{/js/popper.min.js}"></script>
+    <script th:src="@{/js/main.js}"></script>
+    <script th:src="@{/js/jquery-3.2.1.slim.min.js}"></script>
+    <script th:src="@{/js/bootstrap.min.js}"></script>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}">
+</head>
+<body>
+<div class="row">
+    <div class="col-md-6 offset-3">
+        <form action="/logout" method="post">
+            <div class="alert alert-warning"><h3>Are you sure sign out ?</h3></div>
+            <button type="submit" class="btn btn-danger">Yes</button>
+            <a href="/" class="btn btn-primary">Home</a>
+        </form>
+    </div>
+</div>
+</body>
+</html>
