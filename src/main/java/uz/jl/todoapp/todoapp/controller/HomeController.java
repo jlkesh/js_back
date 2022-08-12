@@ -1,7 +1,10 @@
 package uz.jl.todoapp.todoapp.controller;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.servlet.ModelAndView;
+import uz.jl.todoapp.todoapp.repository.TodoRepository;
 
 /**
  * @author "Elmurodov Javohir"
@@ -10,11 +13,16 @@ import org.springframework.web.bind.annotation.GetMapping;
  */
 
 @Controller
+@RequiredArgsConstructor
 public class HomeController {
+    private final TodoRepository todoRepository;
+
 
     @GetMapping
-    public String homePage() {
-        return "home";
+    public ModelAndView homePage() {
+        ModelAndView modelAndView = new ModelAndView("main");
+        modelAndView.addObject("todos", todoRepository.findAll());
+        return modelAndView;
     }
 
 }

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Home Page</title>
+    <script th:src="@{/js/jquery-3.2.1.slim.min.js}"></script>
+    <script th:src="@{/js/popper.min.js}"></script>
+    <script th:src="@{/js/bootstrap.min.js}"></script>
+    <script th:src="@{/js/main.js}"></script>
+    <script th:src="@{/js/helpers.js}"></script>
+    <script th:src="@{/js/elements.js}"></script>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="wrapper">
+    <div class="task-input">
+        <input type="hidden" id="todo_id">
+        <input type="text" id="input" placeholder="Add a new task">
+    </div>
+    <div class="controls">
+        <div class="filters">
+            <span class="active" id="all">All</span>
+            <span id="pending">Pending</span>
+            <span id="completed">Completed</span>
+        </div>
+        <button class="clear-btn">Clear All</button>
+    </div>
+    <ul class="task-box" id="task-container"></ul>
+</div>
+
+</body>
+</html>
